@@ -23,6 +23,22 @@ object DulkirConfig : Config(Mod("DulkirMod", ModType.SKYBLOCK), "dulkirmod-conf
     var crimsonIslesMemoryLeakPatch = true
 
     @Switch(
+        name = "Remove Useless Armor Stands",
+        description = "Another hypixel issue, should be a significant fps boost in relevant scenarios.",
+        category = "General",
+        subcategory = "General"
+    )
+    var blankStandRemoval = true
+
+    @Switch(
+        name = "Debug Armor stands",
+        description = "Another hypixel issue, should be a significant fps boost in relevant scenarios.",
+        category = "General",
+        subcategory = "General"
+    )
+    var debugStandRemoval = false
+
+    @Switch(
         name = "Hide Enchant Rune Particles",
         description = "ugly go bye-bye",
         category = "General",
@@ -45,14 +61,6 @@ object DulkirConfig : Config(Mod("DulkirMod", ModType.SKYBLOCK), "dulkirmod-conf
         subcategory = "General"
     )
     var abiCallerID = false
-
-    @Switch(
-        name = "Hurt Cam Slider",
-        description = "more or less ouchie",
-        category = "General",
-        subcategory = "General"
-    )
-    var hurtCamSlider = false
 
     @Slider(
         name = "Hurt Cam Intensity",
@@ -115,6 +123,14 @@ object DulkirConfig : Config(Mod("DulkirMod", ModType.SKYBLOCK), "dulkirmod-conf
         subcategory = "Dungeons"
     )
     var hideHeartParticles = false
+
+    @Switch(
+        name = "Starred Mob Boxes",
+        description = "Self Explanatory, NOT esp",
+        category = "Dungeons",
+        subcategory = "Dungeons"
+    )
+    var starredBoxes = false
 
     @Switch(
         name = "Throttle Notifier",
@@ -695,7 +711,7 @@ object DulkirConfig : Config(Mod("DulkirMod", ModType.SKYBLOCK), "dulkirmod-conf
     var witherKeyDisplayHUD: KeyHud = KeyHud()
 
     @HUD(
-        name = "Pitch/Yaw Display",
+        name = "Pitch/Yaw Display in Garden",
         category = "HUD",
         subcategory = "Farming"
     )
@@ -716,6 +732,14 @@ object DulkirConfig : Config(Mod("DulkirMod", ModType.SKYBLOCK), "dulkirmod-conf
         subcategory = "Farming"
     )
     var yaw3Decimals = false
+
+    @Switch(
+        name = "Display outside garden",
+        description = "Useful for something!",
+        category = "HUD",
+        subcategory = "Farming"
+    )
+    var showYawEverywhere = false
 
     @HUD(
         name = "Garden Info Display",
@@ -748,6 +772,21 @@ object DulkirConfig : Config(Mod("DulkirMod", ModType.SKYBLOCK), "dulkirmod-conf
     )
     var visitorInfo = true
 
+    @Switch(
+        name = "Steak Display",
+        description = "Show a hitbox around a mob when it can be 1 shot with Steak",
+        category = "Rift",
+        subcategory = "Vamp Slayer"
+    )
+    var steakDisplay = false
+
+    @Switch(
+        name = "Ichor Highlight",
+        description = "Shows a hitbox around current ichors",
+        category = "Rift",
+        subcategory = "Vamp Slayer"
+    )
+    var ichorHighlight = false
 
 
     fun init() {
